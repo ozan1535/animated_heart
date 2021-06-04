@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(59, 216, 169);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kalp {
+            width: 120px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 2s;
+        }
+
+        .sol, .sag {
+            transition: all 2s;
+            position: absolute;
+            width: 120px;
+            height: 220px;
+            background-color: red;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+        }
+
+        .sag {
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .kalp:hover .sol {
+            transition: 2s;
+            animation: kalp-sol 1s linear;
+            animation-iteration-count: 3;
+            
+        }
+
+        .kalp:hover .sag {
+            transition: 2s;
+            animation: kalp-sag 1s linear;
+            animation-iteration-count: 3;
+        }
+
+        @keyframes kalp-sol {
+            0% {
+                transform: rotate(45deg) translateX(50px);
+            }
+            50% {
+                width: 150px;
+                height: 300px;
+                transform: rotate(45deg) translateX(75px);
+            }
+            100% {
+                width: 120px;
+                height: 220px;
+                transform: rotate(45deg) translateX(50px);
+            }
+        }
+
+        @keyframes kalp-sag {
+            0% {
+                transform: rotate(-45deg) translateX(-50px);
+            }
+            50% {
+                width: 150px;
+                height: 300px;
+                transform: rotate(-45deg) translateX(-75px);
+            }
+            100% {
+                width: 120px;
+                height: 220px;
+                transform: rotate(-45deg) translateX(-50px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="kalp">
+        <div class="sol"></div>
+        <div class="sag">TOUCH
+            
+        </div>
+    </div>
+    
+</body>
+</html>
